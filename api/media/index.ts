@@ -33,7 +33,7 @@ app.get('/', (c) => {
 })
 
 app.get(
-  '/media',
+  '/songs',
   basicAuth({
     username: 'mediaapi',
     password: 'mediaapi-2024',
