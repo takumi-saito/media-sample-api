@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Cheerful_Tunes",
+    "artist": "ISSEI AIR",
+    "duration": 164000,
+    "cover": "/media/covers/Cheerful_Tunes.jpg",
+    "url": "/media/tracks/Cheerful_Tunes.mp3"
+  },
+  {
+    "title": "Dream Weaver",
+    "artist": "ISSEI AIR",
+    "duration": 164000,
+    "cover": "/media/covers/Dream_Weaver.jpg",
+    "url": "/media/tracks/Dream_Weaver.mp3"
+  }
+]
