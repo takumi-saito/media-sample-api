@@ -1,23 +1,24 @@
-const express = require('express');
-const router = express.Router();
-const path = require('path');
-const fs = require('fs');
+import express, { Router } from 'express';
 
-// 楽曲データファイルのパス
-const songsDataPath = path.join(__dirname, '../json/songsData.json');
+const app = express();
 
-// 楽曲一覧を返却するエンドポイント
-router.get('/songs', (req, res) => {
-  // JSONファイルを読み込む
-  fs.readFile(songsDataPath, 'utf8', (err, data) => {
-    if (err) {
-      console.error('Failed to load songs data:', err);
-      return res.status(500).json({ error: 'Failed to load songs data' });
-    }
+const router = Router();
 
-    const songs = JSON.parse(data);
-    res.json(songs);
+router.get('/', (_, res) => {
+  res.json({
+    message: 'Hello from express!',
   });
 });
 
-module.exports = router;
+router.get('/posts/:slug', (req, res) => {
+  res.json({
+    post: {
+      title: 'Test Post',
+      slug: req.params['slug'],
+    },
+  });
+});
+
+app.use('/api/express', router);
+
+export default app;
