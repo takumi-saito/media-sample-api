@@ -5,8 +5,8 @@
       "destination": "/api/express"
     },
     {
-      "source": "/api/hono/(.*)",
-      "destination": "/api/hono"
+      "source": "/api/media/(.*)",
+      "destination": "/api/media"
     }
   ],
   "regions": ["hnd1"]
