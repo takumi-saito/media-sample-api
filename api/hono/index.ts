@@ -2,7 +2,7 @@ import { Hono } from 'hono'
 import { basicAuth } from 'hono/basic-auth'
 
 export const config = {
-  runtime: 'edge',
+    runtime: 'edge',
 }
 const app = new Hono().basePath('/api/hono')
 
