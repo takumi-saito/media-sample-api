@@ -10,15 +10,15 @@ const songsData = [
     "title": "Cheerful_Tunes",
     "artist": "ISSEI AIR",
     "duration": 164000,
-    "cover": "/media/covers/Cheerful_Tunes.jpg",
-    "url": "/media/tracks/Cheerful_Tunes.mp3"
+    "cover": "https://media-sample-api-tr6g.vercel.app/media/covers/Cheerful_Tunes.jpg",
+    "url": "https://media-sample-api-tr6g.vercel.app/media/tracks/Cheerful_Tunes.mp3"
   },
   {
     "title": "Dream Weaver",
     "artist": "ISSEI AIR",
     "duration": 164000,
-    "cover": "/media/covers/Dream_Weaver.jpg",
-    "url": "/media/tracks/Dream_Weaver.mp3"
+    "cover": "https://media-sample-api-tr6g.vercel.app/media/covers/Dream_Weaver.jpg",
+    "url": "https://media-sample-api-tr6g.vercel.app/media/tracks/Dream_Weaver.mp3"
   }
 ];
 
