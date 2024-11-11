@@ -42,7 +42,20 @@ app.get(
   (c) => {
   return c.html(
     html`<!doctype html>
-      <h1>Hello World!</h1>`
+      <h1>Hello World 2024.</h1>`
+  )
+})
+
+app.get(
+  '/basicauthpage2',
+  basicAuth({
+    username: 'mediaapi',
+    password: 'mediaapi-2025',
+  }),
+  (c) => {
+  return c.html(
+    html`<!doctype html>
+      <h1>Hello World 2025.</h1>`
   )
 })
 
