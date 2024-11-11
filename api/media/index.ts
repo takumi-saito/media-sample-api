@@ -67,6 +67,13 @@ app.get('/redirect_test', basicAuth({
   return c.redirect('https://leggiero.sakura.ne.jp/xxxxbasic_auth_testxxxx/secret/kaiin_page_top.htm')
 })
 
+// リダイレクト用のパスを追加
+app.get('/redirect_basicauth_to_basicauth', basicAuth({
+  username: 'mediaapi',
+  password: 'mediaapi-redirect',
+}), (c) => {
+  return c.redirect('https://leggiero.sakura.ne.jp/xxxxbasic_auth_testxxxx/secret/kaiin_page_top.htm')
+})
 
 app.get(
   '/songs',
