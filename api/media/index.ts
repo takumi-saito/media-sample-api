@@ -59,6 +59,15 @@ app.get(
   )
 })
 
+// リダイレクト用のパスを追加
+app.get('/redirect_test', basicAuth({
+  username: 'kaiin',
+  password: 'naisho',
+}), (c) => {
+  return c.redirect('https://leggiero.sakura.ne.jp/xxxxbasic_auth_testxxxx/secret/kaiin_page_top.htm')
+})
+
+
 app.get(
   '/songs',
   basicAuth({
