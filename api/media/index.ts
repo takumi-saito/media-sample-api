@@ -1,5 +1,6 @@
 import { Hono } from 'hono'
 import { basicAuth } from 'hono/basic-auth'
+import { html } from 'hono/html';
 import { handle } from 'hono/nextjs'
 
 export const config = {
@@ -30,6 +31,19 @@ app.get('/', (c) => {
   return c.json({
     message: 'Hello World!',
   })
+})
+
+app.get(
+  '/basicauthpage',
+  basicAuth({
+    username: 'mediaapi',
+    password: 'mediaapi-2024',
+  }),
+  (c) => {
+  return c.html(
+    html`<!doctype html>
+      <h1>Hello World!</h1>`
+  )
 })
 
 app.get(
