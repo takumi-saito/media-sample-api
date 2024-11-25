@@ -22,6 +22,13 @@ const songsData = [
     "duration": 164000,
     "cover": "https://media-sample-api-tr6g.vercel.app/media/covers/Dream_Weaver.jpg",
     "url": "https://media-sample-api-tr6g.vercel.app/media/tracks/Dream_Weaver.mp3"
+  },
+  {
+    "title": "Piano_Improvisation_2020_Spring_No3",
+    "artist": "brightwaltz",
+    "duration": 753000,
+    "cover": "/media/covers/Piano_Improvisation_2020_Spring_No3.jpg",
+    "url": "/media/tracks/Piano_Improvisation_2020_Spring_No3.mp3"
   }
 ];
 
