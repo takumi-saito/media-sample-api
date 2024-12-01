@@ -40,32 +40,6 @@ app.get('/', (c) => {
   })
 })
 
-app.get(
-  '/basicauthpage',
-  basicAuth({
-    username: 'mediaapi',
-    password: 'mediaapi-2024',
-  }),
-  (c) => {
-  return c.html(
-    html`<!doctype html>
-      <h1>Hello World 2024.</h1>`
-  )
-})
-
-app.get(
-  '/basicauthpage2',
-  basicAuth({
-    username: 'mediaapi',
-    password: 'mediaapi-2025',
-  }),
-  (c) => {
-  return c.html(
-    html`<!doctype html>
-      <h1>Hello World 2025.</h1>`
-  )
-})
-
 // リダイレクト用のパスを追加
 app.get('/redirect_test', basicAuth({
   username: 'kaiin',
