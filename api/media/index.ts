@@ -32,6 +32,7 @@ const songsData = [
   }
 ];
 
+// ルートパス
 const app = new Hono().basePath('/api/media')
 
 app.get('/', (c) => {
