@@ -82,6 +82,7 @@ app.get('/redirect_basicauth_to_basicauth', basicAuth({
   return c.redirect('https://leggiero.sakura.ne.jp/xxxxbasic_auth_testxxxx/secret/kaiin_page_top.htm')
 })
 
+// 楽曲データを返す
 app.get(
   '/songs',
   basicAuth({
