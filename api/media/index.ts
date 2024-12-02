@@ -42,8 +42,8 @@ const app = new Hono().basePath('/api/media')
 app.use(
   "/*",
   basicAuth({
-    username: "hono",
-    password: "password",
+    username: username,
+    password: pass,
   })
 );
 // 楽曲データを返す
