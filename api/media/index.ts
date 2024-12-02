@@ -47,16 +47,9 @@ app.use(
   })
 );
 // 楽曲データを返す
-app.get(
-  '/songs',
-  basicAuth({
-    username: username,
-    password: pass,
-  }),
-  (c) => {
-    return c.json(songsData)
-  }
-)
+app.get('/songs',(c) => {
+  return c.json(songsData)
+})
 
 app.get('/', (c) => {
   return c.json({
