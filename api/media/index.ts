@@ -1,7 +1,11 @@
 import { Hono } from 'hono'
 import { basicAuth } from 'hono/basic-auth'
 import { html } from 'hono/html';
+import { logger } from "hono/logger";
 import { handle } from 'hono/nextjs'
+
+const username = 'mediaapi'
+const pass = 'mediaapi-2024'
 
 export const config = {
   runtime: 'edge',
@@ -34,39 +38,30 @@ const songsData = [
 
 // ルートパス
 const app = new Hono().basePath('/api/media')
+// 全てのパスにBasic認証を適用
+app.use(
+  "/*",
+  basicAuth({
+    username: "hono",
+    password: "password",
+  })
+);
+// 楽曲データを返す
+app.get(
+  '/songs',
+  basicAuth({
+    username: username,
+    password: pass,
+  }),
+  (c) => {
+    return c.json(songsData)
+  }
+)
 
 app.get('/', (c) => {
   return c.json({
     message: 'Hello World!',
   })
 })
-
-// リダイレクト用のパスを追加
-app.get('/redirect_test', basicAuth({
-  username: 'kaiin',
-  password: 'naisho',
-}), (c) => {
-  return c.redirect('https://leggiero.sakura.ne.jp/xxxxbasic_auth_testxxxx/secret/kaiin_page_top.htm')
-})
-
-// リダイレクト用のパスを追加
-app.get('/redirect_basicauth_to_basicauth', basicAuth({
-  username: 'mediaapi',
-  password: 'mediaapi-redirect',
-}), (c) => {
-  return c.redirect('https://leggiero.sakura.ne.jp/xxxxbasic_auth_testxxxx/secret/kaiin_page_top.htm')
-})
-
-// 楽曲データを返す
-app.get(
-  '/songs',
-  basicAuth({
-    username: 'mediaapi',
-    password: 'mediaapi-2024',
-  }),
-  (c) => {
-    return c.json(songsData)
-  }
-)
 
 export default handle(app)
