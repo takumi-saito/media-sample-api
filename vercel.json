@@ -9,8 +9,19 @@
       "destination": "/api/media"
     },
     {
-      "source": "/.well-known/(.*)",
-      "destination": "/api/well-known/$1"
+      "source": "/.well-known/:path*",
+      "destination": "/api/.well-known/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/.well-known/assetlinks",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+          }
+        ]
     }
   ],
   "regions": ["hnd1"]
