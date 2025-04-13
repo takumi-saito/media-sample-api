@@ -7,22 +7,27 @@
     {
       "source": "/api/media/(.*)",
       "destination": "/api/media"
-    },
-    {
-      "source": "/.well-known/:path*",
-      "destination": "/api/.well-known/:path*"
     }
   ],
   "headers": [
-    {
-      "source": "/.well-known/assetlinks.json",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/json"
+      {
+        "source": "/.well-known/apple-app-site-association",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
           }
         ]
-    }
-  ],
+      },
+      {
+        "source": "/.well-known/assetlinks.json",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ]
+      }
+    ],
   "regions": ["hnd1"]
 }
