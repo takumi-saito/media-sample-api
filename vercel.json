@@ -7,6 +7,10 @@
     {
       "source": "/api/media/(.*)",
       "destination": "/api/media"
+    },
+    {
+      "source": "/.well-known/(.*)",
+      "destination": "/api/well-known/$1"
     }
   ],
   "regions": ["hnd1"]
